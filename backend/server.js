@@ -9,9 +9,9 @@ const PORT = process.env.PORT || 5000;
 // Connect to DB
 connectDB();
 
-// Middleware
+// Middleware (CORS fix)
 app.use(cors({
-  origin: ["http://localhost:5173", "https://url-shortener-five-lake.vercel.app/"]
+  origin: ["http://localhost:5173", "https://url-shortener-five-lake.vercel.app"]
 }));
 
 app.use(express.json());
