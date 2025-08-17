@@ -18,5 +18,10 @@ app.use('/api/url', require('./routes/urlRoutes'));
 const { redirectUrl } = require('./controllers/urlController');
 app.get('/:shortId', redirectUrl);
 
+// Root route (fix for "Cannot GET /")
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running!");
+});
+
 // Start server
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
