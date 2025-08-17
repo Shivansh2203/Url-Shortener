@@ -15,11 +15,12 @@ function App() {
     }
 
     try {
-      const response = await fetch("https://url-shortener-9qnl.onrender.com", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ longUrl }),
-      });
+      const response = await fetch("https://url-shortener-9qnl.onrender.com/api/url/shorten", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ longUrl }),
+});
+
 
       const data = await response.json();
 
